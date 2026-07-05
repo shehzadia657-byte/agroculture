@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Farmer Dashboard - AgroAI</title>
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #f0f8ff;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: green;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+        nav {
+            background-color: #333;
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            margin: 10px;
+            text-decoration: none;
+        }
+        .section {
+            padding: 30px;
+            text-align: center;
+        }
+        select, button {
+            padding: 10px;
+            margin: 10px;
+        }
+        table {
+            margin: 20px auto;
+            border-collapse: collapse;
+            width: 80%;
+            max-width: 600px;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid green;
+            text-align: center;
+        }
+        th {
+            background-color: #e0f7e0;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>👨‍🌾 Farmer Dashboard - AgroAI</h1>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+
+</nav>
+
+<div class="section">
+    <h2>Select Crop to See Details</h2>
+    <select id="cropSelect">
+        <option value="">--Choose Crop--</option>
+        <option value="rice">Rice</option>
+        <option value="wheat">Wheat</option>
+        <option value="maize">Maize</option>
+        <option value="sugarcane">Sugarcane</option>
+        <option value="peanuts">Peanuts</option>
+      
+        <option value="oranges">Oranges</option>
+        <option value="apples">Apples</option>
+        <option value="tomatoes">Tomatoes</option>
+        <option value="potatoes">Potatoes</option>
+        
+    </select>
+    <br>
+    <button onclick="showCropInfo()">Show Crop Info</button>
+
+    <div id="cropInfo"></div>
+</div>
+
+<script>
+    const cropData = {
+        "rice": {
+            type: "Cereal",
+            watering: "High - flooded fields",
+            budget: "PKR 25,000 - 40,000 per acre",
+            sellingRate: "PKR 70 - 90 per kg"
+        },
+        "wheat": {
+            type: "Cereal",
+            watering: "Moderate",
+            budget: "PKR 15,000 - 30,000 per acre",
+            sellingRate: "PKR 60 - 80 per kg"
+        },
+        "maize": {
+            type: "Cereal",
+            watering: "Moderate",
+            budget: "PKR 20,000 - 35,000 per acre",
+            sellingRate: "PKR 50 - 70 per kg"
+        },
+        "sugarcane": {
+            type: "Cereal",
+            watering: "High - frequent irrigation",
+            budget: "PKR 30,000 - 50,000 per acre",
+            sellingRate: "PKR 25 - 35 per kg"
+        },
+        "peanuts": {
+            type: "Legume",
+            watering: "Low - moderate",
+            budget: "PKR 20,000 - 35,000 per acre",
+            sellingRate: "PKR 150 - 200 per kg"
+        },
+        
+        "oranges": {
+            type: "Fruit",
+            watering: "Moderate",
+            budget: "PKR 30,000 - 50,000 per acre",
+            sellingRate: "PKR 80 - 120 per kg"
+        },
+        "apples": {
+            type: "Fruit",
+            watering: "Moderate",
+            budget: "PKR 50,000 - 70,000 per acre",
+            sellingRate: "PKR 120 - 200 per kg"
+        },
+        "tomatoes": {
+            type: "Vegetable",
+            watering: "High - daily watering",
+            budget: "PKR 25,000 - 40,000 per acre",
+            sellingRate: "PKR 50 - 100 per kg"
+        },
+        "potatoes": {
+            type: "Vegetable",
+            watering: "Moderate",
+            budget: "PKR 20,000 - 35,000 per acre",
+            sellingRate: "PKR 40 - 60 per kg"
+        },
+        
+    };
+
+    function showCropInfo() {
+        const crop = document.getElementById("cropSelect").value;
+        const infoDiv = document.getElementById("cropInfo");
+
+        if (!crop) {
+            infoDiv.innerHTML = "<p style='color:red;'>Please select a crop!</p>";
+            return;
+        }
+
+        const data = cropData[crop];
+
+        infoDiv.innerHTML = `
+            <table>
+                <tr><th>Crop Name</th><td>${crop.charAt(0).toUpperCase() + crop.slice(1)}</td></tr>
+                <tr><th>Type</th><td>${data.type}</td></tr>
+                <tr><th>Watering Season</th><td>${data.watering}</td></tr>
+                <tr><th>Budget</th><td>${data.budget}</td></tr>
+                <tr><th>Selling Rate</th><td>${data.sellingRate}</td></tr>
+            </table>
+        `;
+    }
+</script>
+
+</body>
+</html>

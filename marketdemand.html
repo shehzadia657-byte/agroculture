@@ -1,0 +1,117 @@
+<!-- market.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Market Analysis</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin:0;
+            padding:0;
+            background-color:#f9f9f9;
+        }
+        header {
+            background-color: green;
+            color:white;
+            padding:20px;
+            text-align:center;
+        }
+        nav {
+            background-color:#333;
+            overflow:hidden;
+        }
+        nav a {
+            float:left;
+            display:block;
+            color:white;
+            text-align:center;
+            padding:14px 16px;
+            text-decoration:none;
+        }
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        section {
+            padding:50px;
+        }
+        table {
+            width:100%;
+            border-collapse: collapse;
+            margin-top:20px;
+        }
+        th, td {
+            border:1px solid #ddd;
+            padding:10px;
+            text-align:center;
+        }
+        th {
+            background-color: green;
+            color:white;
+        }
+        tr:nth-child(even) {
+            background-color:#e6ffe6;
+        }
+        tr:hover {
+            background-color: #cfffcc;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Market Analysis</h1>
+</header>
+
+<nav>
+    <a href="home.html">Home</a>
+    
+
+</nav>
+
+<section>
+    <h2 style="text-align:center; color:green;">Top Crops, Prices & Demand</h2>
+    <p style="text-align:center; font-style:italic;">Information on most sold crops, their prices in the last 3 years, high-demand areas, and common diseases.</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Crop</th>
+                <th>Price (Last 3 Years)</th>
+                <th>High Demand Areas</th>
+                <th>Common Diseases</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Wheat</td>
+                <td>2023: 1500, 2024: 1600, 2025: 1550 Rs/Maund</td>
+                <td>Punjab, Sindh</td>
+                <td>Rust, Blight</td>
+            </tr>
+            <tr>
+                <td>Rice</td>
+                <td>2023: 2000, 2024: 2100, 2025: 2200 Rs/Maund</td>
+                <td>Punjab, KPK</td>
+                <td>Bacterial Leaf Blight, Blast</td>
+            </tr>
+            <tr>
+                <td>Sugarcane</td>
+                <td>2023: 1800, 2024: 1900, 2025: 2000 Rs/Maund</td>
+                <td>Sindh, Punjab</td>
+                <td>Red Rot, Wilt</td>
+            </tr>
+            <tr>
+                <td>Maize</td>
+                <td>2023: 1400, 2024: 1450, 2025: 1500 Rs/Maund</td>
+                <td>Punjab, KPK</td>
+                <td>Leaf Blight, Rust</td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+</body>
+</html>
